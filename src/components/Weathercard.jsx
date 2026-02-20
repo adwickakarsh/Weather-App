@@ -53,7 +53,7 @@ const WeatherCard = ({ weather, location }) => {
 
         {/* Right: animated SVG icon */}
         <div className="bg-white/40 rounded-3xl p-4">
-          <WeatherIcon code={current.weather_code} size={130} />
+          <Weathericon code={current.weather_code} size={130} />
         </div>
       </div>
 
