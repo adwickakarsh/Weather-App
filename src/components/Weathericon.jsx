@@ -1,6 +1,6 @@
 import React from "react";
 
-const WeatherIcon = ({ code, size = 120 }) => {
+const Weathericon = ({ code, size = 120 }) => {
   const condition = getCondition(code);
 
   return (
@@ -223,4 +223,4 @@ const Stormy = ({ size }) => (
   </svg>
 );
 
-export default WeatherIcon;
+export default Weathericon;

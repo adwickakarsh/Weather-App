@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import WeatherCard from "./components/WeatherCard";
+import Searchbar from "./components/Searchbar";
+import Weathercard from "./components/Weathercard";
 
 const App = () => {
   const [weather, setWeather] = useState(null);
@@ -45,7 +45,7 @@ const App = () => {
       </div>
 
       {/* Search */}
-      <SearchBar onSelectCity={handleSelectCity} loading={loading} />
+      <Searchbar onSelectCity={handleSelectCity} loading={loading} />
 
       {/* Error */}
       {error && (
@@ -54,7 +54,7 @@ const App = () => {
 
       {/* Weather result */}
       {weather && location && (
-        <WeatherCard weather={weather} location={location} />
+        <Weathercard weather={weather} location={location} />
       )}
     </div>
   );

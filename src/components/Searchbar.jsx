@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const SearchBar = ({ onSelectCity, loading }) => {
+const Searchbar = ({ onSelectCity, loading }) => {
   const [city, setCity] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -160,4 +160,4 @@ const SearchBar = ({ onSelectCity, loading }) => {
   );
 };
 
-export default SearchBar;
+export default Searchbar;
