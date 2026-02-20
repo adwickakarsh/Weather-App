@@ -110,7 +110,7 @@ const SearchBar = ({ onSelectCity, loading }) => {
         <button
           onClick={() => suggestions.length > 0 && handleSelect(suggestions[activeIndex >= 0 ? activeIndex : 0])}
           disabled={loading || city.trim().length < 2}
-          className="bg-violet-400 hover:bg-violet-800 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold text-sm p-3 rounded-2xl transition-colors shadow-sm"
+          className="bg-violet-500 hover:scale-110 hover:bg-violet-700 disabled:opacity-0 disabled:cursor-not-allowed text-white font-bold text-sm px-4 py-3 rounded-2xl transition-all duration-300 shadow-sm"
         >
           {loading ? (
             <span className="flex items-center gap-2">

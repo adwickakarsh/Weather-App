@@ -35,12 +35,13 @@ const App = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col gap-10 bg-amber-100 p-10">
+    <div className="md:h-screen
+    flex flex-col gap-10 bg-purple-100 px-8 py-12">
       
       {/* Header */}
-      <div className="flex flex-col gap-7">
-        <h1 className="text-5xl font-black text-black tracking-wide">🌤 Weather Check</h1>
-        <p className="text-xl p-2">Search any city for current weather</p>
+      <div className="flex flex-col gap-7 p-1  max-md:p-0">
+        <span className="text-6xl tracking-wide max-md:text-5xl">🌤 Weather Dekho</span>
+        <p className="text-xl p-2 max-md:text-lg max-md:p-0 text-slate-500">Search any city for current weather</p>
       </div>
 
       {/* Search */}

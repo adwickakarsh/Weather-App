@@ -12,8 +12,8 @@ const WEATHER_LABELS = {
 };
 
 const StatRow = ({ label, value }) => (
-  <div className="flex justify-between items-center bg-white/50 border border-white/70 rounded-2xl px-5 py-4">
-    <span className="text-slate-500 text-sm font-medium">{label}</span>
+  <div className="flex justify-around gap-6 items-center bg-white/50 border border-white/70 rounded-2xl px-7 py-4 transition-all duration-300 hover:scale-115">
+    <span className="text-slate-500 text-sm font-medium ">{label}</span>
     <span className="text-slate-700 text-sm font-black">{value}</span>
   </div>
 );
@@ -24,11 +24,11 @@ const WeatherCard = ({ weather, location }) => {
   const condition = WEATHER_LABELS[current.weather_code] ?? `Code ${current.weather_code}`;
 
   return (
-    <div className="w-full flex gap-10">
+    <div className="w-full flex gap-10 max-md:flex-col">
       {/* Hero card — location + temp + icon */}
-      <div className="bg-white backdrop-blur-md border border-white rounded-3xl px-6 py-5 shadow-md flex items-center justify-between gap-7 transition-all duration-400 scale-90 hover:scale-100">
+      <div className="bg-white backdrop-blur-md border border-white rounded-3xl p-7 shadow-md flex items-center justify-between gap-7 transition-all duration-400 scale-90 hover:scale-100">
         {/* Left: text info */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 max-md:gap-2">
           <p className="text-5xl font-black text-slate-700 leading-tight">
             {location.name}
             <span className="text-slate-400 font-semibold text-lg">, {location.country}</span>
@@ -52,13 +52,13 @@ const WeatherCard = ({ weather, location }) => {
         </div>
 
         {/* Right: animated SVG icon */}
-        <div className="shrink-0 bg-white/40 rounded-3xl p-4">
+        <div className="bg-white/40 rounded-3xl p-4">
           <WeatherIcon code={current.weather_code} size={130} />
         </div>
       </div>
 
       {/* Stat rows */}
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-evenly max-md:gap-5">
         <StatRow label="🌬️ Wind Speed"  value={`${current.wind_speed_10m} km/h`} />
         <StatRow label="🔺 Today's Max" value={`${Math.round(daily.temperature_2m_max[0])} °C`} />
         <StatRow label="🔻 Today's Min" value={`${Math.round(daily.temperature_2m_min[0])} °C`} />
